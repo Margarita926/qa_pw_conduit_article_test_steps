@@ -51,9 +51,6 @@ test('Creat an article with required and optional fields', async () => {
   
 await createArticlePage.clickPublishArticleButton();
 
-// eslint-disable-next-line playwright/no-wait-for-timeout
-await createArticlePage.waitForTimeout();
-
 await createArticlePage.clickPublishArticleButton();
 
   await createArticlePage.verifyRedirectToArticlePage();

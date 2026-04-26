@@ -40,9 +40,6 @@ test('Creat an article with required and optional fields', async () => {
   await createArticlePage.clickNewArticleTitle();
   await createArticlePage.fillNewTitleField(content.title);
 
-  await createArticlePage.clickNewArticleDescription();
-  await createArticlePage.fillNewDescription(content.description);
-
   await createArticlePage.clickNewArticleText();
   await createArticlePage.fillNewText(content.text);
 
@@ -50,12 +47,8 @@ test('Creat an article with required and optional fields', async () => {
   await createArticlePage.fillNewTag(content.tag);
   
 await createArticlePage.clickPublishArticleButton();
-
-// eslint-disable-next-line playwright/no-wait-for-timeout
-await createArticlePage.waitForTimeout();
-
-await createArticlePage.clickPublishArticleButton();
-
-await createArticlePage.verifyRedirectToArticlePage();
+ await createArticlePage.assertErrorMessageContainsText(
+    'Article description cannot be empty',
+  );
  
 });

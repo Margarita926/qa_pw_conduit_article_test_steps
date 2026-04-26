@@ -46,8 +46,9 @@ test('Creat an article with required and optional fields', async () => {
   await createArticlePage.clickNewArticleText();
   await createArticlePage.fillNewText(content.text);
   
+
   await createArticlePage.clickPublishArticleButton();
 
   await createArticlePage.verifyRedirectToArticlePage();
- 
-});
+  
+  });

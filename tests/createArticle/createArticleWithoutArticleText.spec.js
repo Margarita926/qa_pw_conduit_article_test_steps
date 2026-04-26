@@ -43,11 +43,13 @@ test('Creat an article with required and optional fields', async () => {
   await createArticlePage.clickNewArticleDescription();
   await createArticlePage.fillNewDescription(content.description);
 
-  await createArticlePage.clickNewArticleText();
-  await createArticlePage.fillNewText(content.text);
+  await createArticlePage.clickNewArticleTag();
+  await createArticlePage.fillNewTag(content.tag);
   
   await createArticlePage.clickPublishArticleButton();
 
-  await createArticlePage.verifyRedirectToArticlePage();
+ await createArticlePage.assertErrorMessageContainsText(
+    'Article body cannot be empty',
+  );
  
 });

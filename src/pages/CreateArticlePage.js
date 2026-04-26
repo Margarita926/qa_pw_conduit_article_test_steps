@@ -33,14 +33,6 @@ export class CreateArticlePage {
     
     });
   }
-  
-  async waitForTimeout() {
-  // eslint-disable-next-line playwright/no-wait-for-timeout
-  await this.page.waitForTimeout(500);
-}
-
-
-
 
 
      async clickNewArticleTitle() {
@@ -93,6 +85,7 @@ export class CreateArticlePage {
    async fillNewTag(tag) {
     await test.step(`Fill the 'Tag' field`, async () => {
       await this.newArticleTag.fill(tag);
+      await this.page.keyboard.press('Enter');
     });
   }
 
