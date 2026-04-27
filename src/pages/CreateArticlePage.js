@@ -29,7 +29,7 @@ export class CreateArticlePage {
 
   async verifyRedirectToArticlePage() {
     await test.step(`Assert the 'Preview' is shown`, async () => {
-      await expect(this.page).toHaveURL(/\/article\/.*/, { timeout: 10000 });
+      await expect(this.page).toHaveURL(/\/article\/.*/);
     
     });
   }

@@ -34,7 +34,7 @@ test.beforeEach(async ({ page }) => {
     tag: faker.word.noun(),
   };
 
-test('Creat an article with required and optional fields', async () => {
+test('Creat an article without article text', async () => {
   await homePage.clickNewArticleLink();
 
   await createArticlePage.clickNewArticleTitle();
